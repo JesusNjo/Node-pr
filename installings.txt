@@ -1,10 +1,29 @@
 npm install express@4.19.2
+   - Instala Express en la versión 4.19.2, un framework web para Node.js que simplifica la creación de aplicaciones web y APIs.
+
 npm install mongoose
+   - Instala Mongoose, una librería de modelado de objetos para MongoDB en Node.js. Facilita la interacción con MongoDB a través de esquemas y modelos.
 
 npm install --save-dev @types/express@^4.17.21
+   - Instala los tipos de TypeScript para Express. Proporciona soporte de tipos para escribir código TypeScript con Express.
+
 npm install --save-dev ts-node-dev@^2.0.0
+   - Instala ts-node-dev como una dependencia de desarrollo. Es una herramienta para ejecutar archivos TypeScript de manera rápida y automática en entornos de desarrollo.
+
 npm install --save-dev ts-standard@^12.0.2
+   - Instala ts-standard como una dependencia de desarrollo. Es un conjunto de reglas de estilo estándar para TypeScript basado en ESLint.
+
 npm install --save-dev typescript@^5.5.3
+   - Instala TypeScript como una dependencia de desarrollo. TypeScript es un superset de JavaScript que agrega tipado estático opcional a JavaScript.
+
 npm install --save-dev @types/mongoose
+   - Instala los tipos de TypeScript para Mongoose. Proporciona soporte de tipos para escribir código TypeScript con Mongoose.
+
+npm install @types/morgan --save-dev
+   - Instala los tipos de TypeScript para Morgan, un middleware de logging HTTP para Express. Proporciona soporte de tipos para escribir código TypeScript con Morgan.
 
 npm run tsc -- --init
+   - Inicializa un archivo de configuración `tsconfig.json` para TypeScript en tu proyecto. Este archivo define las opciones de compilación para TypeScript.
+
+npm install morgan
+   - Instala Morgan como una dependencia para tu proyecto. Morgan es un middleware de logging HTTP para Express que registra solicitudes HTTP en la consola.

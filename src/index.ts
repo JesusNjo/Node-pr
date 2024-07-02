@@ -1,35 +1,18 @@
-import express from 'express';
-import env from 'dotenv';
-import clientRouter from './routes/clientroute';
-import mongoose from 'mongoose';
-import productRout from './routes/productroute';
+import dotenv from 'dotenv';
+import app from './app';
+import connectDB from './config/database';
 
+dotenv.config();
 
-env.config();
-const app = express();
+// Start server
+const startServer = () => {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+};
 
-const PORT = process.env.PORT || 3000;
-const MONGO_URL= process.env.MONGO_URL || 'mongodb://localhost:27017';
-const MONGO_DB= process.env.MONGO_DB ||  'store';
-
-app.use(express.json());
-
-
-
-mongoose.connect(MONGO_URL,{dbName:MONGO_DB});
-const db = mongoose.connection;
-
-
-//Client routes
-
-app.use('/client',clientRouter);
-
-// Product routes
-
-app.use('/product',productRout)
-
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-    
-})
-
+connectDB().then(startServer).catch(err => {
+    console.error('Failed to connect to MongoDB:', err);
+    process.exit(1); // Exit process with failure
+});
